@@ -320,11 +320,11 @@ items.menu.querySelectorAll('span').forEach((e) => {
 
             if (e.name === event.target.innerText) {
                 const markup = `<div>
-                        <h1>Iphone</h1>
                         <img class="phone-card__img" src=${e.image} alt="">
                     </div>
 
                     <div class="phone-card__info">
+                        <h1>Iphone</h1>
                         <p class="description">${e.description}<br>
                             Объем памяти: 4, 8, 16 ГБ <br>
                             Номер модели на задней панели корпуса: A1203.
@@ -335,7 +335,8 @@ items.menu.querySelectorAll('span').forEach((e) => {
                 markupPhoneCard.innerText = '';
 
                 console.log(document.querySelector('.phone-card'))
-                document.querySelector('.phone-card').insertAdjacentHTML('afterbegin', markup)
+                document.querySelector('.phone-card').insertAdjacentHTML('afterbegin', markup);
+                items.menu.classList.remove('menu-active')
             }
         })
     })
