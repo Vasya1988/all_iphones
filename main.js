@@ -336,7 +336,7 @@ items.menu.querySelectorAll('span').forEach((e) => {
 
                 console.log(document.querySelector('.phone-card'))
                 document.querySelector('.phone-card').insertAdjacentHTML('afterbegin', markup);
-                items.menu.classList.remove('menu-active')
+                items.menu.classList.remove('menu-active');
             }
         })
     })
