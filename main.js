@@ -324,7 +324,7 @@ items.menu.querySelectorAll('span').forEach((e) => {
                     </div>
 
                     <div class="phone-card__info">
-                        <h1>${e.name}</h1>
+                        <h1>${event.target.innerText}</h1>
                         <p class="description">${e.description}<br>
                             Объем памяти: 4, 8, 16 ГБ <br>
                             Номер модели на задней панели корпуса: A1203.
