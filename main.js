@@ -302,13 +302,39 @@ items.burger.addEventListener('click', (event)=> {
 
     if (items.menu.className === 'menu-list') {
         items.menu.classList.add('menu-active');
-        event.target.src = '/images/burger-icon_open.svg';
+                document.querySelector('.menu-title').innerHTML = `<svg data-burger class="menu-title__img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 529 382.8" style="enable-background:new 0 0 529 382.8;" xml:space="preserve">
+        <style type="text/css">
+            .st0{fill:#787878;}
+        </style>
+        <g>
+            <path class="st0" d="M430.5,4.3l-353,353c-5.8,5.8-5.8,15.3,0,21.1c5.8,5.8,15.3,5.8,21.1,0l353-353c5.8-5.8,5.8-15.3,0-21.1
+                C445.7-1.4,436.3-1.4,430.5,4.3z"/>
+            <path class="st0" d="M98.5,4.3l353,353c5.8,5.8,5.8,15.3,0,21.1s-15.3,5.8-21.1,0l-353-353c-5.8-5.8-5.8-15.3,0-21.1
+                S92.7-1.4,98.5,4.3z"/>
+        </g>
+        </svg>
+        `;
         console.log('Work')
         console.log(items.menu);
         
     } else {
         items.menu.classList.remove('menu-active');
-        event.target.src = '/images/burger-icon.svg';
+        document.querySelector('.menu-title').innerHTML = `
+        <svg data-burger class="menu-title__img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 529 298" style="enable-background:new 0 0 529 298;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#787878;}
+            </style>
+            <g>
+                <path class="st0" d="M14.9,29.8h499.2c8.2,0,14.9-6.7,14.9-14.9C529,6.7,522.3,0,514.1,0H14.9C6.7,0,0,6.7,0,14.9
+                    C0,23.1,6.7,29.8,14.9,29.8z"/>
+                <path class="st0" d="M514.1,134.1H14.9C6.7,134.1,0,140.8,0,149s6.7,14.9,14.9,14.9h499.2c8.2,0,14.9-6.7,14.9-14.9
+                    S522.3,134.1,514.1,134.1z"/>
+                <path class="st0" d="M514.1,268.2H14.9c-8.2,0-14.9,6.7-14.9,14.9c0,8.2,6.7,14.9,14.9,14.9h499.2c8.2,0,14.9-6.7,14.9-14.9
+                    C529,274.9,522.3,268.2,514.1,268.2z"/>
+            </g>
+            </svg>`
     }
 });
 
