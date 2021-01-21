@@ -345,6 +345,8 @@ items.menu.querySelectorAll('span').forEach((e) => {
         images.forEach((e) => {
 
             if (e.name === event.target.innerText) {
+                items.menu.classList.remove('menu-active');
+
                 const markup = `<div>
                         <img class="phone-card__img" src=${e.image} alt="">
                     </div>
