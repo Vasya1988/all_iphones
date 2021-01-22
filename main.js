@@ -361,6 +361,8 @@ items.menu.querySelectorAll('span').forEach((e) => {
         images.forEach((e) => {
 
             if (e.name === event.target.innerText) {
+                items.menu.classList.remove('menu-active');
+
                 const markup = `<div>
                         <img class="phone-card__img" src=${e.image} alt="">
                     </div>
@@ -395,6 +397,23 @@ items.menu.querySelectorAll('span').forEach((e) => {
                 console.log(document.querySelector('.phone-card'));
                 document.querySelector('.phone-card').insertAdjacentHTML('afterbegin', markup);
                 items.menu.classList.remove('menu-active');
+                
+                document.querySelector('.menu-title').innerHTML = `
+        <svg data-burger class="menu-title__img" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 529 298" style="enable-background:new 0 0 529 298;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#787878;}
+            </style>
+            <g>
+                <path class="st0" d="M14.9,29.8h499.2c8.2,0,14.9-6.7,14.9-14.9C529,6.7,522.3,0,514.1,0H14.9C6.7,0,0,6.7,0,14.9
+                    C0,23.1,6.7,29.8,14.9,29.8z"/>
+                <path class="st0" d="M514.1,134.1H14.9C6.7,134.1,0,140.8,0,149s6.7,14.9,14.9,14.9h499.2c8.2,0,14.9-6.7,14.9-14.9
+                    S522.3,134.1,514.1,134.1z"/>
+                <path class="st0" d="M514.1,268.2H14.9c-8.2,0-14.9,6.7-14.9,14.9c0,8.2,6.7,14.9,14.9,14.9h499.2c8.2,0,14.9-6.7,14.9-14.9
+                    C529,274.9,522.3,268.2,514.1,268.2z"/>
+            </g>
+            </svg>`;
+
             }
         })
     })
