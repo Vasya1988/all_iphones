@@ -173,3 +173,12 @@ body {
 .one {
     background-color: rgb(23, 143, 127);
 }
+
+
+/* night mode */
+
+.night, .night .description, .night .info {
+    background-color: #000000;
+    color: #fff;
+}
+
