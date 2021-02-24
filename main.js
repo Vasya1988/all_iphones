@@ -28,7 +28,9 @@ const items = {
             <path class="st0" d="M514.1,268.2H14.9c-8.2,0-14.9,6.7-14.9,14.9c0,8.2,6.7,14.9,14.9,14.9h499.2c8.2,0,14.9-6.7,14.9-14.9
                 C529,274.9,522.3,268.2,514.1,268.2z"/>
         </g>
-        </svg>`
+        </svg>`,
+    nightMode: document.querySelector('[data-night-mode="night"]'),
+    body: document.querySelector('body')
 }
 
 const images = [
@@ -334,20 +336,16 @@ function createMenuIcon() {
 // Прослушиваем событие клик, по иконке меню бургера
 function openMenu() {
     return new Promise((resolve, reject) => {
-
         // Прослушиваем событие клик, по иконке меню бургера
         items.menuIcon.addEventListener('click', (e) => {
             if ( items.menu.classList.contains('menu-active')) {
-
                 // Меняем иконку
                 items.menuIcon.innerHTML = items.menuOff;
                 // Удаляем активный класс
                 items.menu.classList.remove('menu-active');
-                console.log('Close');
             } else {
                 items.menuIcon.innerHTML = items.menuOn;
                 items.menu.classList.add('menu-active');
-                console.log('Open');
             }
 
         })
@@ -365,7 +363,6 @@ function checkPhone() {
                 images.forEach((e) => {
         
                     if (e.name === event.target.innerText) {
-
                         // Закрываем меню
                         items.menu.classList.remove('menu-active');
 
@@ -400,9 +397,42 @@ function checkPhone() {
     })
 }
 
+// Кнопка ночного режима
+function nightMode() {
+    return new Promise((resolve, reject) => {
+        items.nightMode.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('work');
+            let modeName = items.nightMode.querySelector('span');
+            let modeIcon = items.nightMode.querySelector('img');
+
+            if (modeName.innerText === 'Night mode') {
+                items.body.classList.add('night');
+                modeName.innerText = 'Light mode';
+                modeIcon.src = "images/icons/light-mode-icon.png";
+            } else {
+                modeName.innerText = 'Night mode';
+                items.body.classList.remove('night');
+                modeIcon.src = "images/icons/night-mode-icon_dark-blue.png"
+            }
+            resolve();
+        });
+        resolve();
+    })
+}
+
+// Появление стратового логотипа
+function riseLogo() {
+    return new Promise((resolve, reject) => {
+        document.querySelector('.phone-card').style.opacity = 1;
+        resolve();
+    })
+}
 
 async function runScript() {
     await createMenuIcon();
+    await riseLogo();
+    await nightMode();
     await openMenu();
     checkPhone();
 }
